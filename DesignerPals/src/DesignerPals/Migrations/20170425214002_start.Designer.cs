@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using DesignerPals.Data;
 
-namespace DesignerPals.Data.Migrations
+namespace DesignerPals.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170421163008_start")]
+    [Migration("20170425214002_start")]
     partial class start
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,9 +24,9 @@ namespace DesignerPals.Data.Migrations
 
                     b.Property<string>("Answer");
 
-                    b.Property<int?>("QId");
+                    b.Property<string>("Name");
 
-                    b.Property<string>("UserName");
+                    b.Property<int?>("QId");
 
                     b.HasKey("Id");
 
@@ -89,9 +89,9 @@ namespace DesignerPals.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Question");
+                    b.Property<string>("Name");
 
-                    b.Property<string>("UserName");
+                    b.Property<string>("Question");
 
                     b.HasKey("Id");
 
