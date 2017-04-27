@@ -1,23 +1,25 @@
-﻿using System;
+﻿using DesignerPals.Infrastructure;
+using DesignerPals.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using static DesignerPals.Infrastructure.GenericRepository;
+
 
 namespace DesignerPals.Services
 {
     public class QuestionServices
     {
-        private IGenericRepository _repo;
+        private QRepository _repo;
 
-        public QuestionServices(IGenericRepository repo)
+        public QuestionServices(QRepository repo)
         {
             _repo = repo;
         }
 
         public IList<Q> ListByQ()
         {
-
+            return (from q in _repo.ListQ() select q).ToList();
         }
     }
 }

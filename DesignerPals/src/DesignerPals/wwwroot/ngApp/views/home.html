@@ -1,4 +1,27 @@
-<h2>Home</h2>
-<p>
-    {{controller.message}}
-</p>
+<h3>Enter Your Question Here:</h3>
+<br />
+<form ng-submit="controller.save()">
+ <label>
+    Question:
+    <input type="text" ng-model="controller.question.question" />
+</label>
+<button type="submit">Add Question</button>
+</form>
+<br />
+<h3>Answers</h3>
+<div ng-repeat="a in controller.question">{{a.answers}}
+</div>
+<br />
+<h3>More Questions</h3>
+<div ng-repeat="q in controller.question">
+        {{q.name}}
+        <br />
+        {{q.question}}
+        <br />
+        {{q.answers}}
+        <br />
+        <form ng-submit="controller.save()">
+            <input ng-model="controller.question.answer" />
+            <button type="submit"></button>
+        </form>
+</div>

@@ -14,7 +14,7 @@ using System.IO;
 using DesignerPals.Data;
 using DesignerPals.Models;
 using DesignerPals.Services;
-
+using DesignerPals.Infrastructure;
 
 namespace DesignerPals
 {
@@ -63,7 +63,10 @@ namespace DesignerPals
                         {
                             options.AddPolicy("AdminOnly", policy => policy.RequireClaim("IsAdmin"));
                         });
-            
+
+            //add scoped
+            services.AddScoped<QuestionServices>();
+            services.AddScoped<QRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

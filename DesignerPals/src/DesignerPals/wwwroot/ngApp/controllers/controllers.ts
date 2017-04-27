@@ -1,7 +1,29 @@
 namespace DesignerPals.Controllers {
 
     export class HomeController {
-        public message = 'Hello from the home page!';
+        private qResource
+        public allQuestions;
+        public question;
+
+        public getQuestion()
+        {
+            this.allQuestions = this.qResource.query();
+        }
+        public save()
+        {
+            this.qResource.save(this.question).$promise.then(
+                () => {
+                this.question = null;
+                this.getQuestion();
+                }
+                )
+        }
+        constructor(private $http: ng.IHttpService)
+        {
+            this.qResource = $http.get('/api/questions/:id').then(
+                (results) => { this.question = results.data; }
+            );
+        }
     }
 
 
@@ -17,7 +39,7 @@ namespace DesignerPals.Controllers {
 
 
     export class AboutController {
-        public message = 'Hello from the about page!';
+
     }
 
 }
