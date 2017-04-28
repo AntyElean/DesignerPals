@@ -22,6 +22,8 @@ namespace DesignerPals.Infrastructure
         {
             return _db.Qs.Include(i => i.Answers).ToList();
         }
+        //find q by question
+
         //find q by primary key
         public Q FindQ(int id)
         {

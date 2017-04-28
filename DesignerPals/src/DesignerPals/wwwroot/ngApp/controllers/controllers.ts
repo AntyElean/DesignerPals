@@ -6,7 +6,7 @@ namespace DesignerPals.Controllers {
         
         constructor(private $http: ng.IHttpService)
         {
-           $http.get('/api/questions/:id').then(
+           $http.get('/api/questions').then(
                (results) => {
                    this.question = results.data;
                }

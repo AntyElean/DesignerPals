@@ -9,19 +9,25 @@
 </form>
 <br />
 <h3>Answers</h3>
-<div ng-repeat="a in controller.question">{{a.answers}}
-</div>
+<!-- Say if no answers display no available answers
+    <div ng-repeat="a in controller.question">{{a.answers}}
+</div>-->
 <br />
 <h3>More Questions</h3>
-<div>
-        {{a.name}}
+<li ng-repeat="n in controller.question">
+        {{n.name}}
         <br />
-        {{n.question}}
+       Question:{{n.question}}
         <br />
-        {{n.answers}}
-        <br />
+        Answers:
+        <ol ng-repeat="n in controller.question.answers">
+            {{n.name}}
+
+            {{n.answer}}
+        </ol>
+        
         <form ng-submit="controller.question">
             <input ng-model="controller.question.answer" />
             <button type="submit">Submit</button>
         </form>
-</div>
+</li>

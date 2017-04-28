@@ -27,7 +27,8 @@ namespace DesignerPals.API
         {
             return _questionServices.ListByQ();
         }
-        
-             
+
+        //get by question
+       
     }
 }
