@@ -1,6 +1,6 @@
 <h3>Enter Your Question Here:</h3>
 <br />
-<form ng-submit="controller.save()">
+<form >
  <label>
     Question:
     <input type="text" ng-model="controller.question.question" />
@@ -13,15 +13,15 @@
 </div>
 <br />
 <h3>More Questions</h3>
-<div ng-repeat="q in controller.question">
-        {{q.name}}
+<div>
+        {{a.name}}
         <br />
-        {{q.question}}
+        {{n.question}}
         <br />
-        {{q.answers}}
+        {{n.answers}}
         <br />
-        <form ng-submit="controller.save()">
+        <form ng-submit="controller.question">
             <input ng-model="controller.question.answer" />
-            <button type="submit"></button>
+            <button type="submit">Submit</button>
         </form>
 </div>
